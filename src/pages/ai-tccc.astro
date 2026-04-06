@@ -1,0 +1,404 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI Resources — TCCC" description="AI resources and tools from Nathan Bost's Triangle Christian Chamber talk.">
+  <div class="bg-brand-navy min-h-screen">
+
+    <!-- Password Gate -->
+    <div id="password-gate" class="min-h-screen flex items-center justify-center px-4">
+      <div class="w-full max-w-sm">
+        <div class="text-center mb-8">
+          <p class="text-brand-gold text-xs font-semibold tracking-widest uppercase mb-3">Triangle Christian Chamber</p>
+          <h1 class="text-3xl font-bold text-brand-cream mb-3">AI Resources</h1>
+          <p class="text-brand-cream/60 text-sm leading-relaxed">
+            This page is for talk attendees.<br />Enter the session password to continue.
+          </p>
+        </div>
+
+        <form id="password-form" class="bg-brand-slate/40 border border-brand-slate rounded-xl p-8">
+          <label for="pw-input" class="block text-brand-cream/80 text-sm font-medium mb-2">Password</label>
+          <input
+            id="pw-input"
+            type="password"
+            placeholder="Session password"
+            autocomplete="current-password"
+            class="w-full bg-brand-navy border border-brand-slate rounded-lg px-4 py-3 text-brand-cream placeholder-brand-muted focus:outline-none focus:border-brand-gold transition-colors mb-4"
+          />
+          <p id="pw-error" class="text-red-400 text-sm mb-4 hidden">Incorrect password — try again.</p>
+          <button
+            type="submit"
+            class="w-full bg-brand-gold text-brand-navy font-semibold py-3 rounded-lg hover:bg-brand-gold-light transition-colors"
+          >
+            Unlock Resources
+          </button>
+        </form>
+
+        <p class="text-center text-brand-cream/40 text-xs mt-6">
+          <a href="/ai" class="hover:text-brand-cream/70 transition-colors">← Back to AI Consulting</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Protected Content (hidden until authenticated) -->
+    <div id="protected-content" class="hidden max-w-5xl mx-auto px-4 sm:px-6 py-16">
+
+      <!-- Header -->
+      <header class="mb-16">
+        <div class="flex items-center justify-between mb-6">
+          <a href="/ai" class="text-brand-cream/40 hover:text-brand-cream/70 text-sm transition-colors">← Back to AI Consulting</a>
+          <button id="lock-btn" class="text-brand-cream/40 hover:text-brand-cream/70 text-sm transition-colors">Lock page</button>
+        </div>
+        <p class="text-brand-gold text-sm font-semibold tracking-widest uppercase mb-3">Triangle Christian Chamber</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-brand-cream mb-6 leading-tight">
+          AI in Your Work &<br class="hidden sm:block" /> Life — Resources
+        </h1>
+        <p class="text-brand-cream/70 text-lg max-w-2xl leading-relaxed">
+          Everything from the session — curated tools, frameworks, and references you can act on
+          starting today. No fluff, just the signal.
+        </p>
+      </header>
+
+      <!-- Section 1: The Big Picture -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-brand-gold mb-2">The Big Picture</h2>
+        <p class="text-brand-cream/50 text-sm mb-8">What AI actually is — and what it isn't.</p>
+        <div class="grid sm:grid-cols-3 gap-5">
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <div class="text-brand-gold text-xl mb-3">🧠</div>
+            <h3 class="text-brand-cream font-semibold mb-2">AI is a tool, not a brain</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              Language models predict likely next tokens based on patterns. They're extraordinarily capable
+              at synthesis, drafting, and reasoning — but they don't "know" anything the way you do.
+              Your judgment is still in the loop.
+            </p>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <div class="text-brand-gold text-xl mb-3">⚡</div>
+            <h3 class="text-brand-cream font-semibold mb-2">The leverage is real</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              The best use of AI is force multiplication — doing in 10 minutes what used to take 2 hours.
+              Drafting, research, summarizing, formatting, brainstorming. The key is knowing which tasks
+              benefit from it.
+            </p>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <div class="text-brand-gold text-xl mb-3">✝️</div>
+            <h3 class="text-brand-cream font-semibold mb-2">Wisdom still matters most</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              AI can write a sermon outline, analyze a financial plan, or draft a proposal — but it
+              can't replace your discernment, relationships, or values. Use it to go further, not to
+              check out.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 2: Tools I Use -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-brand-gold mb-2">Tools I Use Daily</h2>
+        <p class="text-brand-cream/50 text-sm mb-8">The actual stack — what's worth your time in 2025.</p>
+
+        <div class="space-y-4">
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6 flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-lg">🤖</div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="text-brand-cream font-semibold">Claude (Anthropic)</h3>
+                <span class="text-brand-gold text-xs font-medium bg-brand-gold/10 border border-brand-gold/20 px-2 py-0.5 rounded-full">Primary</span>
+              </div>
+              <p class="text-brand-cream/60 text-sm leading-relaxed mb-2">
+                My main AI assistant. Best-in-class for long-context work, nuanced writing, coding, and complex reasoning.
+                Handles 200k token contexts — meaning it can hold an entire book or project in mind at once.
+              </p>
+              <p class="text-brand-gold/70 text-xs">claude.ai — Free tier available; Pro at $20/mo</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6 flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-lg">💻</div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="text-brand-cream font-semibold">Claude Code</h3>
+                <span class="text-brand-gold text-xs font-medium bg-brand-gold/10 border border-brand-gold/20 px-2 py-0.5 rounded-full">Advanced</span>
+              </div>
+              <p class="text-brand-cream/60 text-sm leading-relaxed mb-2">
+                The AI coding agent I use to build real software — including this website. It reads files,
+                runs commands, writes code, and ships working products autonomously. This is where AI goes
+                from assistant to colleague.
+              </p>
+              <p class="text-brand-gold/70 text-xs">Runs in terminal — requires Claude Pro or API access</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6 flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-lg">🔍</div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="text-brand-cream font-semibold">Perplexity</h3>
+                <span class="text-brand-gold text-xs font-medium bg-brand-gold/10 border border-brand-gold/20 px-2 py-0.5 rounded-full">Research</span>
+              </div>
+              <p class="text-brand-cream/60 text-sm leading-relaxed mb-2">
+                AI-powered search with cited sources. When I need to research something quickly and want
+                references I can verify, Perplexity beats a standard Google search for most professional
+                research tasks.
+              </p>
+              <p class="text-brand-gold/70 text-xs">perplexity.ai — Free tier solid; Pro at $20/mo</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6 flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-lg">📝</div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="text-brand-cream font-semibold">Obsidian + AI</h3>
+                <span class="text-brand-gold text-xs font-medium bg-brand-gold/10 border border-brand-gold/20 px-2 py-0.5 rounded-full">Knowledge</span>
+              </div>
+              <p class="text-brand-cream/60 text-sm leading-relaxed mb-2">
+                My decade-long personal knowledge base. Connected to AI so I can query my own notes,
+                sermons, ideas, and research — it's like having a second brain that actually knows me.
+                4,000+ notes and growing.
+              </p>
+              <p class="text-brand-gold/70 text-xs">obsidian.md — Free; AI integrations vary</p>
+            </div>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6 flex gap-5">
+            <div class="flex-shrink-0 w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-lg">🎙️</div>
+            <div>
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="text-brand-cream font-semibold">NotebookLM (Google)</h3>
+                <span class="text-brand-gold text-xs font-medium bg-brand-gold/10 border border-brand-gold/20 px-2 py-0.5 rounded-full">Documents</span>
+              </div>
+              <p class="text-brand-cream/60 text-sm leading-relaxed mb-2">
+                Upload your documents and have an AI that knows them deeply. Great for financial advisors
+                processing client documents, pastors studying commentaries, or business owners making
+                sense of contracts. Can even generate a podcast from your sources.
+              </p>
+              <p class="text-brand-gold/70 text-xs">notebooklm.google.com — Free</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 3: How I Actually Use AI -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-brand-gold mb-2">How I Actually Use AI</h2>
+        <p class="text-brand-cream/50 text-sm mb-8">Real workflows, not theory.</p>
+        <div class="grid sm:grid-cols-2 gap-5">
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <h3 class="text-brand-cream font-semibold mb-3 flex items-center gap-2">
+              <span class="text-brand-gold">💼</span> As a Financial Advisor
+            </h3>
+            <ul class="space-y-2 text-brand-cream/60 text-sm">
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Drafting client letters and emails faster</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Summarizing long research reports</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Explaining complex topics in plain language</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Brainstorming meeting agendas and talking points</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Reviewing my own writing for clarity</li>
+            </ul>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <h3 class="text-brand-cream font-semibold mb-3 flex items-center gap-2">
+              <span class="text-brand-gold">🏛️</span> As a Chamber Leader
+            </h3>
+            <ul class="space-y-2 text-brand-cream/60 text-sm">
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Building the Chamber website (with Claude Code)</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Drafting announcements, newsletters, and outreach</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Planning events and creating run-of-show docs</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Researching speakers and topics quickly</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Turning meeting notes into action items</li>
+            </ul>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <h3 class="text-brand-cream font-semibold mb-3 flex items-center gap-2">
+              <span class="text-brand-gold">✝️</span> In Faith & Reflection
+            </h3>
+            <ul class="space-y-2 text-brand-cream/60 text-sm">
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Exploring scripture commentaries and cross-references</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Drafting prayers and reflections to refine myself</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Generating outlines for talks or devotionals</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Asking hard ethical questions and getting nuanced takes</li>
+            </ul>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <h3 class="text-brand-cream font-semibold mb-3 flex items-center gap-2">
+              <span class="text-brand-gold">🔧</span> Building Custom Tools
+            </h3>
+            <ul class="space-y-2 text-brand-cream/60 text-sm">
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Carson — my personal AI assistant (named after Mr. Carson)</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> Automated morning brief with calendar + email summary</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> This website — fully built with AI coding agents</li>
+              <li class="flex gap-2"><span class="text-brand-gold flex-shrink-0">→</span> AI pipeline for processing sermons and journals</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 4: Where to Start -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-brand-gold mb-2">Where to Start</h2>
+        <p class="text-brand-cream/50 text-sm mb-8">If you leave with one thing, let it be this.</p>
+
+        <div class="bg-brand-slate/20 border border-brand-gold/30 rounded-xl p-8 mb-6">
+          <h3 class="text-brand-cream font-semibold text-lg mb-4">The 3-Step Ramp</h3>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold text-brand-navy font-bold text-sm flex items-center justify-center">1</div>
+              <div>
+                <p class="text-brand-cream font-medium mb-1">Pick one repetitive task you hate</p>
+                <p class="text-brand-cream/60 text-sm">Email drafts, meeting summaries, weekly reports — something you do every week that drains energy. That's your first AI win.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold text-brand-navy font-bold text-sm flex items-center justify-center">2</div>
+              <div>
+                <p class="text-brand-cream font-medium mb-1">Try Claude.ai for two weeks</p>
+                <p class="text-brand-cream/60 text-sm">Free account, no credit card. Use it for that one task. Be specific in your prompts — context is everything. "Write a professional follow-up email to a client who missed our meeting about their financial plan" beats "write an email."</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold text-brand-navy font-bold text-sm flex items-center justify-center">3</div>
+              <div>
+                <p class="text-brand-cream font-medium mb-1">Expand from there</p>
+                <p class="text-brand-cream/60 text-sm">Once you've got one win, you'll see the pattern everywhere. Add tools only as real needs emerge — not because they're interesting. Complexity is the enemy of adoption.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+          <h3 class="text-brand-cream font-semibold mb-3">Prompting Tips That Actually Work</h3>
+          <div class="grid sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-brand-gold font-medium mb-1">Give context</p>
+              <p class="text-brand-cream/60">"I'm a financial advisor writing to a 65-year-old client nervous about market volatility..." beats generic prompts every time.</p>
+            </div>
+            <div>
+              <p class="text-brand-gold font-medium mb-1">Be specific about format</p>
+              <p class="text-brand-cream/60">"Give me 5 bullet points, each under 20 words" produces more usable output than "summarize this."</p>
+            </div>
+            <div>
+              <p class="text-brand-gold font-medium mb-1">Iterate, don't restart</p>
+              <p class="text-brand-cream/60">"Make the tone warmer" or "shorten the second paragraph" — treat it like editing with a colleague, not a vending machine.</p>
+            </div>
+            <div>
+              <p class="text-brand-gold font-medium mb-1">Ask it to push back</p>
+              <p class="text-brand-cream/60">"What am I missing?" or "What's the strongest counterargument?" — the model is more useful when you invite critique.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Ethical Grounding -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-semibold text-brand-gold mb-2">The Questions Worth Asking</h2>
+        <p class="text-brand-cream/50 text-sm mb-8">AI isn't morally neutral. As Christians in business, we should be thoughtful.</p>
+        <div class="grid sm:grid-cols-3 gap-5">
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <p class="text-brand-gold text-lg mb-2">🔏</p>
+            <h3 class="text-brand-cream font-semibold mb-2">Privacy & Data</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              Don't paste client data, personal details, or confidential information into AI tools without
+              knowing their data policies. Claude and many others offer enterprise tiers where your data isn't used for training.
+            </p>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <p class="text-brand-gold text-lg mb-2">🤝</p>
+            <h3 class="text-brand-cream font-semibold mb-2">Transparency</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              If AI helped you write something, consider when disclosure matters. For newsletters and
+              marketing, readers have an interest in knowing. For personal letters, use judgment.
+              Honesty is the baseline.
+            </p>
+          </div>
+
+          <div class="bg-brand-slate/40 border border-brand-slate rounded-xl p-6">
+            <p class="text-brand-gold text-lg mb-2">👁️</p>
+            <h3 class="text-brand-cream font-semibold mb-2">Verify Before Sharing</h3>
+            <p class="text-brand-cream/60 text-sm leading-relaxed">
+              AI makes things up. It's called hallucination. If the model gives you a statistic, a quote,
+              or a citation — look it up before you repeat it. This matters especially in professional
+              and ministry contexts.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="text-center bg-brand-slate/20 border border-brand-gold/20 rounded-xl p-10">
+        <h2 class="text-2xl font-bold text-brand-cream mb-3">Want to go deeper?</h2>
+        <p class="text-brand-cream/60 mb-6 max-w-xl mx-auto">
+          I'm happy to help you think through how AI fits into your specific work — whether that's
+          financial services, ministry, or running a business. No sales pitch. Just a conversation.
+        </p>
+        <a
+          href="mailto:nbost130@gmail.com"
+          class="inline-block bg-brand-gold text-brand-navy font-semibold px-10 py-4 rounded-lg hover:bg-brand-gold-light transition-colors"
+        >
+          Email Nathan
+        </a>
+      </section>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const STORAGE_KEY = 'tccc_auth';
+  const PASSWORD = 'tccc2025';
+
+  const gate = document.getElementById('password-gate')!;
+  const content = document.getElementById('protected-content')!;
+  const form = document.getElementById('password-form') as HTMLFormElement;
+  const input = document.getElementById('pw-input') as HTMLInputElement;
+  const error = document.getElementById('pw-error')!;
+  const lockBtn = document.getElementById('lock-btn')!;
+
+  function unlock() {
+    gate.classList.add('hidden');
+    content.classList.remove('hidden');
+    sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  function lock() {
+    sessionStorage.removeItem(STORAGE_KEY);
+    content.classList.add('hidden');
+    gate.classList.remove('hidden');
+    input.value = '';
+    error.classList.add('hidden');
+  }
+
+  // Check session
+  if (sessionStorage.getItem(STORAGE_KEY) === '1') {
+    unlock();
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (input.value.trim().toLowerCase() === PASSWORD) {
+      error.classList.add('hidden');
+      unlock();
+    } else {
+      error.classList.remove('hidden');
+      input.value = '';
+      input.focus();
+    }
+  });
+
+  lockBtn.addEventListener('click', lock);
+</script>

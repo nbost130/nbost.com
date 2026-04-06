@@ -1,0 +1,31 @@
+---
+import Nav from '../components/Nav.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Nathan Bost — Financial Advisor, AI consultant, and follower of Christ.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Nathan Bost</title>
+  </head>
+  <body class="bg-brand-cream text-brand-navy min-h-screen flex flex-col overflow-x-hidden">
+    <Nav />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <footer class="bg-brand-navy text-brand-cream/60 text-sm text-center py-6 mt-16">
+      <p>&copy; {new Date().getFullYear()} Nathan Bost. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
