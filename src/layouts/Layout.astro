@@ -16,6 +16,14 @@ const { title, description = 'Nathan Bost — Financial Advisor, AI consultant, 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta property="og:title" content={`${title} | Nathan Bost`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Nathan Bost" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${title} | Nathan Bost`} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Nathan Bost</title>
   </head>
